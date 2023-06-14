@@ -1,12 +1,9 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Pagina Inicial</title>
-</head>
-<body>
-    <h1>Meu site esta no ar!</h1>
-        <p> Esse site ta ficando massa!<p>
-    <h2>Testando novo arquivo</h2>
-</body>
-</html>
+{% extends 'base.html' %}
+
+{% block body %}
+        <div>
+            <h1>Meu site esta no ar!</h1>
+                <p> Esse site ta ficando massa!<p>
+            <h2>Testando novo arquivo</h2>
+        </div>
+{% endblock %}
