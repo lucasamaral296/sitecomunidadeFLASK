@@ -7,10 +7,9 @@ app = Flask(__name__)
 lista_usuarios = ['Lira', 'João', 'Alon', 'Alessandra', 'Amanda']
 
 app.config['SECRET_KEY'] = '6037c3d29cc427f4051a2521ea3adf25168c7b44057fa953'
-app.config['SQLALCHEMY_DATABASE_URI'] = 'slite:///comunidade.db'
+app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///comunidade.db'
 
 database = SQLAlchemy(app)
-
 
 
 @app.route("/")
