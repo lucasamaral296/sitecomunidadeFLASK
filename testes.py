@@ -1,4 +1,5 @@
-from main import app, database
+from comunidadeimpressionadora import database, app
+from comunidadeimpressionadora.models import Usuario
 
 # with app.app_context():
 #     database.create_all()
@@ -12,10 +13,10 @@ from main import app, database
 #
 #     database.session.commit()
 
-# with app.app_context():
-#     usuario_teste = Usuario.query.filter_by(email='Lira@gmail.com').first()
-#     print(usuario_teste)
-#     print(usuario_teste.username)
+with app.app_context():
+    usuario_teste = Usuario.query.first()
+    print(usuario_teste)
+    print(usuario_teste.senha)
 
 # with app.app_context():
 #     meu_post = Post(id_usuario=1, titulo='Primeiro posto do lira', corpo='Lira voando')
@@ -26,6 +27,6 @@ from main import app, database
 #     post = Post.query.first()
 #     print(post.autor.email)
 
-with app.app_context():
-    database.drop_all()
-    database.create_all()
+# with app.app_context():
+#     database.drop_all()
+#     database.create_all()
