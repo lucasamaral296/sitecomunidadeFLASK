@@ -13,10 +13,12 @@ from comunidadeimpressionadora.models import Usuario
 #
 #     database.session.commit()
 
-with app.app_context():
-    usuario_teste = Usuario.query.first()
-    print(usuario_teste)
-    print(usuario_teste.senha)
+# with app.app_context():
+#     usuario_teste = Usuario.query.all()
+#     # usuario2 =Usuario.query.filter_by(username='NovoLucas').first()
+#     print(usuario_teste)
+
+   # print(usuario_teste.senha)
 
 # with app.app_context():
 #     meu_post = Post(id_usuario=1, titulo='Primeiro posto do lira', corpo='Lira voando')
