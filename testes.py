@@ -32,3 +32,7 @@ from comunidadeimpressionadora.models import Usuario
 # with app.app_context():
 #     database.drop_all()
 #     database.create_all()
+
+with app.app_context():
+    usuario = Usuario.query.filter_by(email='lucas@hotmail.com.br').first()
+    print(usuario.cursos)
