@@ -33,6 +33,6 @@ from comunidadeimpressionadora.models import Usuario
 #     database.drop_all()
 #     database.create_all()
 
-with app.app_context():
-    usuario = Usuario.query.filter_by(email='lucas@hotmail.com.br').first()
-    print(usuario.cursos)
+# with app.app_context():
+#     usuario = Usuario.query.filter_by(email='lucas@hotmail.com.br').first()
+#     print(usuario.cursos)
