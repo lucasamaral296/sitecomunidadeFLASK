@@ -13,7 +13,8 @@ lista_usuarios = ['Lira', 'João', 'Alon', 'Alessandra', 'Amanda']
 
 @app.route("/")
 def home():
-    return render_template('home.html')
+    posts = Post.query.order_by(Post.id.desc())
+    return render_template('home.html', posts=posts)
 
 
 @app.route('/contato')
