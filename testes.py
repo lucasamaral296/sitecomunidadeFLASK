@@ -1,5 +1,5 @@
 from comunidadeimpressionadora import database, app
-from comunidadeimpressionadora.models import Usuario
+from comunidadeimpressionadora.models import Usuario, Post
 
 # with app.app_context():
 #     database.create_all()
@@ -34,5 +34,5 @@ from comunidadeimpressionadora.models import Usuario
 #     database.create_all()
 
 # with app.app_context():
-#     usuario = Usuario.query.filter_by(email='lucas@hotmail.com.br').first()
-#     print(usuario.cursos)
+#     post = Post.query.first()
+#     print(post.titulo, post.corpo, post.autor)
