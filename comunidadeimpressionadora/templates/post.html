@@ -24,10 +24,10 @@
                         <small class="text-muted" style="font-size: 15px">
                             - Data de Criação:{{ post.data_criacao.strftime('%d/%m/%Y') }}
                             {% if form %}
-                            - <a href="#form_editarpost" class="link-offset-2 link-underline link-underline-opacity-0">
+                            - <a href="#form_editarpost" class="link-offset-2 link-underline link-underline-opacity-0 ">
                                 Editar Post
                             </a>
-                            / <a href="#" class="link-offset-2 link-underline link-underline-opacity-0" data-bs-toggle="modal" data-bs-target="#ExcluirPost">
+                            / <a href="#" class="link-offset-2 link-underline link-underline-opacity-0 text-danger" data-bs-toggle="modal" data-bs-target="#ExcluirPost">
                                 Excluir Post
                             </a>
                             {% endif %}
@@ -89,15 +89,17 @@
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
-        <h1 class="modal-title fs-5" id="exampleModalLabel">Tem certeza?</h1>
+        <h1 class="modal-title fs-5" id="exampleModalLabel">Excluir Post</h1>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
-        Tem certeza que quer excluir o Post?
+        Tem certeza que quer excluir esse Post? (Não podera ser desfeito)
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
-        <button type="button" class="btn btn-primary">Salvar Alteração</button>
+          <form method="POST" action="{{ url_for('excluir_post', post_id=post.id) }}">
+              <button type="submit" class="btn btn-danger">Excluir</button>
+          </form>
       </div>
     </div>
   </div>
