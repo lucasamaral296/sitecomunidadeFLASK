@@ -1,36 +1,36 @@
 {% extends 'base.html' %}
 
 {% block body %}
-        <div class="container mt-3">
-            <h1 style="color: orange">Comunidade Impressionadora</h1>
-            <h2>Alunos, experts e a galera da Hashtag Treinamentos</h2>
-            <hr>
-            {% for post in posts %}
-            <div class="row border mt-4 p-3 meupost">
-                <div class="col col-2">
-                    <div class="image pe-2">
-                        <img src="{{ url_for('static', filename='fotos_perfil/{}'.format(post.autor.foto_perfil)) }}" class="rounded" width="200" >
-                        <div>
-                            <strong>{{ post.autor.username }}</strong>
-                        </div>
-                        <div class="row justify-content-center">
-                            <br>
-                            {% for curso in post.autor.cursos.split(';') %}
-                                <button type="button" class="btn btn-success mt-2" disabled>{{ curso }}</button>
-                            {% endfor %}
-
-                        </div>
-                    </div>
+<div class="container mt-3">
+    <h1 style="color: orange">Comunidade Impressionadora</h1>
+    <h2>Alunos, experts e a galera da Hashtag Treinamentos</h2>
+    <hr>
+    {% for post in posts %}
+    <div class="row border mt-4 p-3 meupost ">
+        <div class="col-sm col-md-2">
+            <div class="image pe-2 flex-column">
+                <img src="{{ url_for('static', filename='fotos_perfil/{}'.format(post.autor.foto_perfil)) }}" class="rounded" width="200">
+                <div >
+                    <strong>{{ post.autor.username }}</strong>
                 </div>
-                <div class="col col-9">
-                    <a href="{{ url_for('exibir_post', post_id=post.id)}}" class="link-offset-2 link-underline link-underline-opacity-0">
-                        <h3>{{ post.titulo }}</h3>
-                    </a>
-                    <p>{{ post.corpo }}</p>
+                <div class="row justify-content-center ">
+                    <br>
+                    {% for curso in post.autor.cursos.split(';') %}
+                    <button type="button" class="btn btn-success mt-2 " disabled>{{ curso }}</button>
+                    {% endfor %}
+
                 </div>
             </div>
-            {% endfor %}
         </div>
+        <div class="col-sm col-md-10 post-container">
+            <a href="{{ url_for('exibir_post', post_id=post.id)}}" class="link-offset-2 link-underline link-underline-opacity-0">
+                <h3>{{ post.titulo }}</h3>
+            </a>
+            <p>{{ post.corpo }}</p>
+        </div>
+    </div>
+    {% endfor %}
+</div>
 <div class="mt-5">
 
 </div>

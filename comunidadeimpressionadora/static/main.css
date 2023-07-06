@@ -39,3 +39,20 @@
 .meupost{
 background: #f2f5f8 !important;
 }
+
+@media screen and (max-width: 600px) {
+    .post-container {
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+    }
+}
+
+ .post-container img {
+    max-width: 100%;
+    height: auto;
+  }
+
+  .post-container p {
+    font-size: 16px;
+  }
